@@ -19,7 +19,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Sign Up" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="CompTest" component={CompTest} />
       </Stack.Navigator>
