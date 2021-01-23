@@ -6,7 +6,7 @@ let UserSchema = new Schema({
   email: { type: String, required: true },
 });
 
-UserSchema.virtual("url").get(function (this) {
+UserSchema.virtual("url").get(function () {
   return "/users/" + this._id;
 });
 
