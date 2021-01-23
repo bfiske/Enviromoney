@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon src/index.js",
+    "devstart": "nodemon --exec npm run build --watch build/index.js",
     "start": "npm run build && node build/index.js"
   },
   "keywords": [],

@@ -4,7 +4,7 @@ import userRouter from "../routes/users";
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.response("hello world");
+  res.send("hello world");
 });
 router.use("/users", userRouter);
 
