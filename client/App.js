@@ -5,6 +5,6 @@ import CompTest from './CompTest';
 
 export default function App() {
   return (
-    CompTest
-  );
+    CompTest()
+  )
 }
