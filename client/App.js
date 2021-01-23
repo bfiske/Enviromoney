@@ -1,9 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import CompTest from "./components/CompTest";
 import Login from "./screens/Login";
+import { Platform, StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { enableScreens } from "react-native-screens";
+import { createStackNavigator } from "@react-navigation/stack";
+import { ActionSheetProvider } from "@expo/react-native-action-sheet";
+import SignUp from "./screens/SignUp";
+import Home from "./screens/Home";
+
+enableScreens();
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return <Login />;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="CompTest" component={CompTest} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View, TextInput, Button, Alert } from "react-native";
 
-export default function Login({ navigation }) {
+export default function SignUp({ navigation }) {
   const [username, setUsername] = useState("");
-  const [errors, setErrors] = useState({});
   return (
     <View style={styles.container}>
       <Text>Login</Text>
@@ -13,11 +12,11 @@ export default function Login({ navigation }) {
           onChangeText={(text) => setUsername(text)}
         />
         <TextInput secureTextEntry={true} placeholder="password" />
+        <Button title="Login" onPress={() => navigation.navigate("Login")} />
         <Button
-          title="Login"
-          onPress={() => navigation.navigate("Home", { username: username })}
+          title="Sign Up"
+          onPress={() => navigation.navigate("CompText")}
         />
-        <Button title="Sign Up" onPress={() => navigation.navigate("SignUp")} />
       </View>
     </View>
   );
