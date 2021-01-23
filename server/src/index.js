@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import session from "express-session";
 import cors from "cors";
 
-let apiRouter = require("./routes/api");
+import apiRouter from "./routes/api";
 const app = express();
 
 // MongoDB
