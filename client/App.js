@@ -12,6 +12,7 @@ import Login from "./Screens/Login";
 import Profile from "./Screens/Profile";
 import SignUp from "./Screens/SignUp";
 import { UserProvider } from "./Contexts/UserContext";
+import Badges from "./Screens/Badges";
 
 enableScreens();
 
@@ -50,6 +51,7 @@ export default function App() {
           <Stack.Screen name="Organizations" component={CharitySearch} />
           <Stack.Screen name="Analytics" component={Analytics} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Badges" component={Badges} />
         </Stack.Navigator>
       </NavigationContainer>
     </UserProvider>

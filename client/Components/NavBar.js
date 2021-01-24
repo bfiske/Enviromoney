@@ -33,7 +33,7 @@ export default function NavBar({ navigation }) {
   return (
     <View style={styles.navBar}>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Badges")}>
           <Svg
             width={33}
             height={33}
