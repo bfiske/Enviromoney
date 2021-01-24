@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { UserContext } from "../Contexts/UserContext";
 import NavBar from "../Components/NavBar";
-import { Avatar, Card } from "react-native-elements";
+import { Avatar, Card, ListItem } from "react-native-elements";
 
 const treeImg = require("../Images/tree.jpeg");
 
@@ -18,16 +18,30 @@ const userDummyData = {
   achievements: ["Planted 9 trees", "Picked up 12 pounds of ocean plastic"],
 };
 
+const friendsActivityData = [
+  {
+    name: "Gaurang",
+    activity:
+      "Donated $12 in the last month to CoralDefenders and Plant for the Earth",
+  },
+  {
+    name: "Gaurang",
+    activity:
+      "Donated $12 in the last month to CoralDefenders and Plant for the Earth",
+  },
+  {
+    name: "Gaurang",
+    activity:
+      "Donated $12 in the last month to CoralDefenders and Plant for the Earth",
+  },
+];
+
 const screenWidth = Dimensions.get("window").width;
 export default function Profile({ navigation }) {
   const userCtx = useContext(UserContext);
 
   const renderItem = ({ item }) => {
-    return (
-      <Card>
-        <Text>{item}</Text>
-      </Card>
-    );
+    return <Text>{item}</Text>;
   };
 
   return (
@@ -46,14 +60,33 @@ export default function Profile({ navigation }) {
         </View>
         <View style={styles.userHeader}>
           <Text style={styles.username}>{userCtx.user}</Text>
-          <Text style={{ fontSize: 20, marginTop: 20, marginBottom: 10 }}>
+          <Text style={{ fontSize: 20, marginTop: 20 }}>
             Total Donations: {userDummyData.totalDonation}
           </Text>
-          <Text style={{ fontSize: 20 }}>Achievements</Text>
         </View>
         <View style={styles.achievementsList}>
-          <FlatList data={userDummyData.achievements} renderItem={renderItem} />
+          <Card>
+            <Card.Title>Achievements</Card.Title>
+            <Card.Divider />
+            <FlatList
+              data={userDummyData.achievements}
+              renderItem={renderItem}
+            />
+          </Card>
         </View>
+        <ScrollView>
+          <Text>Friends Activity</Text>
+          {friendsActivityData.map((friend, idx) => {
+            return (
+              <ListItem key={idx} bottomDivider>
+                <ListItem.Content>
+                  <ListItem.Title>{friend.name}</ListItem.Title>
+                  <ListItem.Subtitle>{friend.activity}</ListItem.Subtitle>
+                </ListItem.Content>
+              </ListItem>
+            );
+          })}
+        </ScrollView>
 
         <NavBar navigation={navigation} />
       </View>
