@@ -12,10 +12,12 @@ import Home from "./Screens/Home";
 import IndividualCharity from "./Screens/IndividualCharity";
 import MyCharity from "./Screens/MyCharity";
 import CharitySearch from "./Screens/CharitySearch";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 enableScreens();
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
@@ -28,7 +30,6 @@ export default function App() {
           component={Home}
           options={{ headerShown: false }}
         />
-
         <Stack.Screen name="CompTest" component={CompTest} />
         <Stack.Screen name="MyCharity" component={MyCharity} />
         <Stack.Screen name="IndividualCharity" component={IndividualCharity} />
