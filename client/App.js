@@ -9,6 +9,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import SignUp from "./screens/SignUp";
 import Home from "./screens/Home";
+import Charities from "./screens/Charities";
 
 enableScreens();
 
@@ -21,8 +22,8 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="CompTest" component={CompTest} />
+        <Stack.Screen name="Charities" component={Charities} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-
+}
