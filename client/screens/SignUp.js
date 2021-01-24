@@ -48,6 +48,20 @@ export default function SignUp({ navigation }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.signUpText}>Sign Up</Text>
+
+      <Text>Login</Text>
+      <View>
+        <TextInput
+          placeholder="username"
+          onChangeText={(text) => setUsername(text)}
+        />
+        <TextInput secureTextEntry={true} placeholder="password" />
+        <Button title="Login" onPress={() => navigation.navigate("Login")} />
+        <Button
+          title="Sign Up"
+          onPress={() => navigation.navigate("CompTest")}
+        />
+
       </View>
 
       {formErrors.length > 0 &&
