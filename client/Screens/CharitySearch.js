@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View, TextInput, Button, ScrollView, FlatList, StatusBar, Image, TouchableOpacity, SafeAreaView, ImageStore} from "react-native";
 import { SearchBar, Card } from "react-native-elements"
+
 const dummyData = [{
     'id' : '1',
     'charity' : 'Tree Place',
@@ -104,12 +105,20 @@ export default function Charities({ navigation }) {
 
     return (
         <SafeAreaView style = {styles.view1}>
-        <Image
-            source = {require('../Images/tree.jpeg')}
-            style={styles.image, styles.container}
+        <SearchBar  
+            placeholder = "What new organization would you like to donate to?"
+            onChangeText={updateSearch}
+            value={search}
         />
-        <Text>Current Charity: One Big Tree</Text>
-        </SafeAreaView>     
+        <ScrollView>
+            <FlatList
+                data={data}
+                renderItem = {renderItem}
+                keyExtractor={(item) => item.id}
+            />
+        </ScrollView>
+        </SafeAreaView>
+        
     )
 }
 

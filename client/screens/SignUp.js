@@ -15,7 +15,7 @@ export default function SignUp({ navigation }) {
         <Button title="Login" onPress={() => navigation.navigate("Login")} />
         <Button
           title="Sign Up"
-          onPress={() => navigation.navigate("CompText")}
+          onPress={() => navigation.navigate("CompTest")}
         />
       </View>
     </View>
