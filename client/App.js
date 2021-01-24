@@ -7,11 +7,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { enableScreens } from "react-native-screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
-
 import SignUp from "./Screens/SignUp";
 import Home from "./Screens/Home";
 import IndividualCharity from "./Screens/IndividualCharity"
-import Charities from "./Screens/Charities";
+import MyCharity from "./Screens/MyCharity";
 import CharitySearch from "./Screens/CharitySearch"
 
 enableScreens();
@@ -20,17 +19,17 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Sign Up" component={SignUp} />
-        <Stack.Screen name="Home" component={Home} />
-
-        <Stack.Screen name="CompTest" component={CompTest} />
-        <Stack.Screen name="Charities" component={Charities} />
-        <Stack.Screen name="IndividualCharity" component={IndividualCharity} />
-        <Stack.Screen name="CharitySearch" component={CharitySearch} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+    //     <Stack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
+    //     <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+    //     <Stack.Screen name="CompTest" component={CompTest} options={{ headerShown: false }}/>
+    //     <Stack.Screen name="My Charity" component={MyCharity} options={{ headerShown: false }}/>
+    //     <Stack.Screen name="IndividualCharity" component={IndividualCharity} options={{ headerShown: false }}/>
+    //     <Stack.Screen name="CharitySearch" component={CharitySearch} options={{ headerShown: false }}/>
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    <CharitySearch></CharitySearch>
   );
   }

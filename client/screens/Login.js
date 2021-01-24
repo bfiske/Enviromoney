@@ -38,7 +38,7 @@ export default function Login({ navigation }) {
           style={styles.loginBtn}
           onPress={() => navigation.navigate("Home", { username: username })}
         >
-          <Text style={styles.loginBtnText}>Login</Text>
+          <Text style={styles.loginBtnText}>Log in</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.signUp}

@@ -8,9 +8,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import RNPickerSelect from "react-native-picker-select";
 
-import { Picker } from "@react-native-picker/picker";
 const screen = Dimensions.get("screen");
 export default function SignUp({ navigation }) {
   const [username, setUsername] = useState("");
@@ -48,22 +46,7 @@ export default function SignUp({ navigation }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.signUpText}>Sign Up</Text>
-
-      <Text>Login</Text>
-      <View>
-        <TextInput
-          placeholder="username"
-          onChangeText={(text) => setUsername(text)}
-        />
-        <TextInput secureTextEntry={true} placeholder="password" />
-        <Button title="Login" onPress={() => navigation.navigate("Login")} />
-        <Button
-          title="Sign Up"
-          onPress={() => navigation.navigate("CompTest")}
-        />
-
       </View>
-
       {formErrors.length > 0 &&
         formErrors.map((err) => {
           <Text>{err}</Text>;
@@ -89,7 +72,7 @@ export default function SignUp({ navigation }) {
           />
           <TextInput
             style={styles.textInput}
-            placeholder="phoneNumber"
+            placeholder="Phone Number"
             onChangeText={(text) => setPhoneNumber(text)}
           />
           <TouchableOpacity
@@ -104,7 +87,7 @@ export default function SignUp({ navigation }) {
         <View>
           <TextInput
             style={styles.textInput}
-            placeholder="bankAccoutNo"
+            placeholder="Bank Account Number"
             onChangeText={(text) => setBankAccountNo(text)}
           />
 
