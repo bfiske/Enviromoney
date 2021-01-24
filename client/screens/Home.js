@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -9,6 +9,7 @@ import {
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import { Card } from "react-native-elements";
 import NavBar from "../Components/NavBar";
+import { UserContext } from "../Contexts/UserContext";
 
 export default function Home({ navigation, route }) {
   const progress = (amt) => {
@@ -17,7 +18,7 @@ export default function Home({ navigation, route }) {
     }
   };
 
-  console.log(route);
+  const userCtx = useContext(UserContext);
 
   return (
     <>
@@ -27,7 +28,7 @@ export default function Home({ navigation, route }) {
       >
         <View style={styles.body}>
           <View style={styles.container}>
-            <Text style={styles.welcome}>Welcome, {route.params.username}</Text>
+            <Text style={styles.welcome}>Welcome, {userCtx.user}</Text>
           </View>
           <View style={styles.container}>
             <AnimatedCircularProgress

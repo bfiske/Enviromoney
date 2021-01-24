@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Text } from "react-native";
+import { UserContext } from "../Contexts/UserContext";
 
-export default function Profile({ navigation }, props) {
-  const username = props.username;
+export default function Profile({ navigation }) {
+  const userCtx = useContext(UserContext);
 
-  return <Text>{username}</Text>;
+  return <Text>{userCtx.user}</Text>;
 }

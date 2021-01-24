@@ -11,6 +11,7 @@ import IndividualCharity from "./Screens/IndividualCharity";
 import Login from "./Screens/Login";
 import Profile from "./Screens/Profile";
 import SignUp from "./Screens/SignUp";
+import { UserProvider } from "./Contexts/UserContext";
 
 enableScreens();
 
@@ -19,33 +20,38 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Sign Up"
-          component={SignUp}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="CompTest"
-          component={CompTest}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="IndividualCharity" component={IndividualCharity} />
-        <Stack.Screen name="Organizations" component={CharitySearch} />
-        <Stack.Screen name="Analytics" component={Analytics} />
-        <Stack.Screen name="Profile" component={Profile} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Sign Up"
+            component={SignUp}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CompTest"
+            component={CompTest}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="IndividualCharity"
+            component={IndividualCharity}
+          />
+          <Stack.Screen name="Organizations" component={CharitySearch} />
+          <Stack.Screen name="Analytics" component={Analytics} />
+          <Stack.Screen name="Profile" component={Profile} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </UserProvider>
   );
 }

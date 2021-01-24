@@ -7,8 +7,6 @@ export default function IndividualCharity(props, { navigation }) {
   const image = props.route.params.charity.image;
   const char = props.route.params.charity.charity;
   const link = props.route.params.charity.link;
-  console.log(link);
-  console.log(image);
   return (
     <>
       <ScrollView>
