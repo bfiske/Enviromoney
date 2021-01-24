@@ -10,9 +10,9 @@ import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 
 import SignUp from "./Screens/SignUp";
 import Home from "./Screens/Home";
-import IndividualCharity from "./Screens/IndividualCharity"
+import IndividualCharity from "./Screens/IndividualCharity";
 import Charities from "./Screens/Charities";
-import CharitySearch from "./Screens/CharitySearch"
+import CharitySearch from "./Screens/CharitySearch";
 
 enableScreens();
 
@@ -24,7 +24,11 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
 
         <Stack.Screen name="CompTest" component={CompTest} />
         <Stack.Screen name="Charities" component={Charities} />
@@ -33,4 +37,4 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-  }
+}
