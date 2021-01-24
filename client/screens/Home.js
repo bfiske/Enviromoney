@@ -54,7 +54,7 @@ export default function Home({ navigation, route }) {
             <Text style={styles.text}>Monthly Donations: $55</Text>
             <TouchableOpacity
               style={styles.changeBtn}
-              onPress={() => navigation.navigate("Organizations")}
+              onPress={() => navigation.navigate("Organizations", {changemode : true})}
             >
               <Text style={styles.changeBtnText}>Change Organization</Text>
             </TouchableOpacity>

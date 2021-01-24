@@ -21,7 +21,7 @@ const data = {
   labels: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thurs"],
   datasets: [
     {
-      data: [20, 45, 28, 80, 99, 43],
+      data: [0.6, 2.4, 0, 0.8, 1.2, 3.4],
       color: (opacity = 1) => `rgba(86, 204, 242, ${opacity})`, // optional
       strokeWidth: 2, // optional
     },
@@ -30,12 +30,12 @@ const data = {
 };
 
 const dummyData = [
-  { day: "Saturday 1/31/2019", amount: "0.5" },
-  { day: "Saturday 1/31/2019", amount: "0.5" },
-  { day: "Saturday 1/31/2019", amount: "0.5" },
-  { day: "Saturday 1/31/2019", amount: "0.5" },
-  { day: "Saturday 1/31/2019", amount: "0.5" },
-  { day: "Saturday 1/31/2019", amount: "0.5" },
+  { day: "Thursday 1/31/2019", amount: "0.6" },
+  { day: "Wednesday 1/30/2019", amount: "2.4" },
+  { day: "Tuesday 1/31/2019", amount: "0" },
+  { day: "Monday 1/31/2019", amount: "0.8" },
+  { day: "Sunday 1/31/2019", amount: "1.2" },
+  { day: "Saturday 1/31/2019", amount: "3.4" },
 ];
 
 export default function GraphStats({ navigation }) {
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "center",
+    marginVertical: 40,
   },
   headerBtn: {
     backgroundColor: "#56CCF2",

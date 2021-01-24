@@ -6,6 +6,7 @@ import {
   View,
   Dimensions,
   FlatList,
+  StatusBar
 } from "react-native";
 import { UserContext } from "../Contexts/UserContext";
 import NavBar from "../Components/NavBar";
@@ -53,7 +54,7 @@ export default function Profile({ navigation }) {
             <Avatar
               rounded
               size="xlarge"
-              source={{ uri: treeImg.toString() }}
+              source={require("../Images/tree.jpeg")}
               activeOpacity={0.7}
             />
           </View>
@@ -109,11 +110,12 @@ const styles = StyleSheet.create({
   profileTxt: { fontSize: 30, color: "white", marginVertical: 20 },
   container: {
     flex: 1,
+    marginTop: StatusBar.currentHeight || 40,
     alignItems: "stretch",
     backgroundColor: "white",
   },
   profilePic: {
-    marginBottom: -50,
+    marginBottom: -100,
   },
   achievementsList: {
     flex: 1,

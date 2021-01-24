@@ -13,6 +13,7 @@ import Profile from "./Screens/Profile";
 import SignUp from "./Screens/SignUp";
 import { UserProvider } from "./Contexts/UserContext";
 import Badges from "./Screens/Badges";
+import { Button } from "react-native"
 
 enableScreens();
 
@@ -45,14 +46,23 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="IndividualCharity"
+            name="Organization"
             component={IndividualCharity}
+            options={{
+              headerRight: () => (
+                  <Button
+                  onPress={() => alert('Clicked !!')}
+                  title="menu"
+                  color="#000"
+                  />
+              ),
+              }}
           />
-          <Stack.Screen name="Organizations" component={CharitySearch} />
+          <Stack.Screen name="Organizations" component={CharitySearch}  options={{ headerShown: false }}/>
 
-          <Stack.Screen name="Analytics" component={Analytics} />
-          <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Badges" component={Badges} />
+          <Stack.Screen name="Analytics" component={Analytics}  options={{ headerShown: false }}/>
+          <Stack.Screen name="Profile" component={Profile}  options={{ headerShown: false }}/>
+          <Stack.Screen name="Badges" component={Badges}  options={{ headerShown: false }}/>
         </Stack.Navigator>
       </NavigationContainer>
     </UserProvider>
