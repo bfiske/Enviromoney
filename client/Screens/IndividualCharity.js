@@ -17,13 +17,11 @@ export default function IndividualCharity( props ) {
           <Text style={styles.littleText}>{descr}</Text>
           <TouchableOpacity
             style={styles.nextBtn}
-            //onPress={() => handleSubmit()}
           >
           <Text style={styles.nextText}>Learn More</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.nextBtn}
-            //onPress={() => handleSubmit()}
           >
             <Text style={styles.nextText}>Support this organization!</Text>
           </TouchableOpacity>
