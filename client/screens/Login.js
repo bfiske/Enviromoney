@@ -15,7 +15,7 @@ export default function Login({ navigation }) {
     userCtx.setUser(username);
     navigation.navigate("Home");
   };
-  console.log(screen);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
