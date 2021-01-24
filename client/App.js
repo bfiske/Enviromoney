@@ -49,6 +49,7 @@ export default function App() {
             component={IndividualCharity}
           />
           <Stack.Screen name="Organizations" component={CharitySearch} />
+
           <Stack.Screen name="Analytics" component={Analytics} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Badges" component={Badges} />

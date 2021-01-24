@@ -70,12 +70,13 @@ export default function Profile({ navigation }) {
             <Card.Divider />
             <FlatList
               data={userDummyData.achievements}
+              bottomDivider
               renderItem={renderItem}
             />
           </Card>
         </View>
         <ScrollView>
-          <Text>Friends Activity</Text>
+          <Text style={{ fontSize: 20, margin: "auto" }}>Friend Activity</Text>
           {friendsActivityData.map((friend, idx) => {
             return (
               <ListItem key={idx} bottomDivider>
@@ -112,11 +113,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   profilePic: {
-    marginBottom: -60,
+    marginBottom: -50,
   },
   achievementsList: {
     flex: 1,
-    marginTop: -350,
+    marginTop: -100,
     justifyContent: "flex-start",
     alignItems: "stretch",
   },
