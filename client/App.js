@@ -11,9 +11,6 @@ import SignUp from "./Screens/SignUp";
 import Home from "./Screens/Home";
 import IndividualCharity from "./Screens/IndividualCharity";
 import CharitySearch from "./Screens/CharitySearch";
-import IndividualCharity from "./Screens/IndividualCharity";
-import MyCharity from "./Screens/MyCharity";
-import CharitySearch from "./Screens/CharitySearch";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 enableScreens();

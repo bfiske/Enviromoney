@@ -25,13 +25,13 @@ export default function Login({ navigation }) {
         <TextInput
           autoCorrect={false}
           style={styles.textInput}
-          placeholder="username"
+          placeholder="Username"
           onChangeText={(text) => setUsername(text)}
         />
         <TextInput
           style={styles.textInput}
           secureTextEntry={true}
-          placeholder="password"
+          placeholder="Password"
           onChangeText={(text) => setPassword(text)}
         />
         <TouchableOpacity

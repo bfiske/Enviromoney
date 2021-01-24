@@ -94,20 +94,6 @@ export default function Charities({ navigation }) {
                 </View>
             </Card>
         </TouchableOpacity>
-        <Card>
-            <View style = {{flexDirection: 'row', flex : 1}}>
-            <View style = {{flex : 33}}>
-                <Image 
-                source = {require('../Images/tree.jpeg')}
-                style = {styles.image}
-                />
-            </View>
-            <View style = {{flex : 66}}> 
-                <Text style = {styles.title}>{item.charity}</Text>
-                <Text>{item.descr}</Text>
-            </View>
-            </View>
-        </Card>
         );
     };
 
@@ -120,13 +106,11 @@ export default function Charities({ navigation }) {
             containerStyle = {{backgroundColor : "#56CCF2"}}
             
         />
-        <ScrollView>
-            <FlatList
-                data={data}
-                renderItem = {renderItem}
-                keyExtractor={(item) => item.id}
-            />
-        </ScrollView>
+        <FlatList
+            data={data}
+            renderItem = {renderItem}
+            keyExtractor={(item) => item.id}
+        />
         </SafeAreaView>
         
     )

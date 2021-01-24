@@ -9,19 +9,9 @@ import {
   Dimensions,
 } from "react-native";
 
-const screen = Dimensions.get("screen");
-import {
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  Button,
-  TouchableOpacity,
-  Dimensions,
-} from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 
-import { Picker } from "@react-native-picker/picker";
+//import { Picker } from "@react-native-picker/picker";
 const screen = Dimensions.get("screen");
 export default function SignUp({ navigation }) {
   const [username, setUsername] = useState("");
@@ -68,24 +58,24 @@ export default function SignUp({ navigation }) {
         <View styles={styles.form}>
           <TextInput
             style={styles.textInput}
-            placeholder="username"
+            placeholder="Username"
             onChangeText={(text) => setUsername(text)}
           />
 
           <TextInput
             style={styles.textInput}
-            placeholder="email"
+            placeholder="Email"
             onChangeText={(text) => setEmail(text)}
           />
           <TextInput
             style={styles.textInput}
             secureTextEntry={true}
-            placeholder="password"
+            placeholder="Password"
             onChangeText={(text) => setPassword(text)}
           />
           <TextInput
             style={styles.textInput}
-            placeholder="phoneNumber"
+            placeholder="Phone Number"
             onChangeText={(text) => setPhoneNumber(text)}
           />
           <TouchableOpacity
@@ -100,7 +90,7 @@ export default function SignUp({ navigation }) {
         <View>
           <TextInput
             style={styles.textInput}
-            placeholder="bankAccoutNo"
+            placeholder="Bank Account Number"
             onChangeText={(text) => setBankAccountNo(text)}
           />
 
@@ -119,7 +109,7 @@ export default function SignUp({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
     alignItems: "center",
     justifyContent: "center",
     height: 50,
@@ -132,6 +122,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     borderRadius: 10,
+    alignSelf: 'center'
   },
   header: {
     flexDirection: "row",
@@ -159,7 +150,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   form: {
-    alignItems: "center",
+    alignSelf: 'center',
     justifyContent: "center",
     width: screen.width,
   },

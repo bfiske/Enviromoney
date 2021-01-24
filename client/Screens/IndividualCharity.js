@@ -1,6 +1,7 @@
 import { SafeAreaView } from "react-native";
 import React from 'react'
 import { Text, StyleSheet, View, TextInput, Button, Alert } from "react-native";
+import NewImage from '../Components/NewImage'
 
 
 export default function IndividualCharity( props ) {
@@ -10,15 +11,14 @@ export default function IndividualCharity( props ) {
     console.log(image)
     return (
     <SafeAreaView>
-        {/* <Image>
-            source = {require(image)}
-        </Image> */}
-        <Text>Welcome to {char}</Text>
-        {/* <Button
-            title="Click here for more information!"
-            onPress = {window.location.replace(link)}
-        /> */}
-        
+        <View>
+            <NewImage imageName = {require(image)}/>
+            <Text>Welcome to {char}</Text>
+            <Button
+                title="Click here for more information!"
+                onPress = {window.location.replace(link)}
+            />
+        </View>
     </SafeAreaView>
     )
 }
