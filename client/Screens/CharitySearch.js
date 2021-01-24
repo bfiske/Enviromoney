@@ -1,69 +1,50 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View, TextInput, Button, ScrollView, FlatList, StatusBar, Image, TouchableOpacity, SafeAreaView, ImageStore} from "react-native";
-import { SearchBar, Card } from "react-native-elements"
+import { SearchBar, Card, ListItem, Icon } from "react-native-elements"
 
 const dummyData = [{
     'id' : '1',
-    'charity' : 'Tree Place',
+    'charity' : 'World Wildlife Fund',
     'image' : './images/tree.jpeg',
-    'link' : 'www.google.com'
+    'link' : 'www.google.com',
+    'descr': 'The mission of World Wildlife Fund is to conserve nature and reduce the most pressing threats to the diversity of life on Earth.'
 },
 {
     'id' : '2',
-    'charity' : 'Water Place',
+    'charity' : 'The Great Barrier Reef Foundation',
     'image' : '2.png',
-    'link' : 'www.google.com'
+    'link' : 'www.google.com',
+    'descr': 'The Great Barrier Reef is an irreplaceable ecosystem - home to thousands of species of marine life, including fish, dolphins... '
 
 },
 {
     'id' : '3',
-    'charity' : 'Mountain Place',
+    'charity' : 'Rainforest Foundation Fund',
     'image' : '3.png',
-    'link' : 'www.google.com'
+    'link' : 'www.google.com',
+    'descr': 'The mission of the Rainforest Foundation is to support indigenous and traditional peoples of the world’s rainforests in their efforts to...'
 },
 {
     'id' : '4',
-    'charity' : 'Save the Plants',
+    'charity' : 'Earthjustice',
     'image' : '4.png',
-    'link' : 'www.google.com'
+    'link' : 'www.google.com',
+    'descr': 'Our mission is to wield the power of law and the strength of partnership to protect people\'s health, to preserve magnificent places and wildlife...'
 },
 {
     'id' : '5',
-    'charity' : 'Recycle',
+    'charity' : 'Surfrider Foundation',
     'image' : '5.png',
-    'link' : 'www.google.com'
+    'link' : 'www.google.com',
+    'descr': 'The Surfrider Foundation is dedicated to the protection and enjoyment of the world\'s ocean, waves and beaches, for all people, through a powerful...'
 },
 {
     'id' : '6',
-    'charity' : 'No Litter',
+    'charity' : 'Clean Air Foundation',
     'image' : '6.png',
-    'link' : 'www.google.com'
+    'link' : 'www.google.com',
+    'descr': 'The Clean Air Foundation makes the air clean'
 },
-{
-    'id' : '7',
-    'charity' : 'Turtles',
-    'image' : '7.png',
-    'link' : 'www.google.com'
-
-},
-{
-    'id' : '8',
-    'charity' : 'Bears',
-    'image' : '8.png',
-    'link' : 'www.google.com'
-},
-{
-    'id' : '9',
-    'charity' : 'No Wildfires',
-    'image' : '9.png',
-    'link' : 'www.google.com'
-},
-{
-    'id' : '10',
-    'charity' : 'Reforest',
-    'image' : '10.png',
-    'link' : 'www.google.com'
-}
 ]
 
 export default function Charities({ navigation }) {
@@ -95,13 +76,6 @@ export default function Charities({ navigation }) {
     const renderItem = ({ item }) => {
         const backgroundColor = item.id === selectedId ? "white" : "#56ccf2";
         return (
-<<<<<<< Updated upstream
-        <Item
-            item={item}
-            onPress={() => navigation.navigate("IndividualCharity", {charity : item})}
-            style={{ backgroundColor }}
-        />
-=======
         <TouchableOpacity
             onPress = {() => navigation.navigate("IndividualCharity", {charity : item})}
             >
@@ -120,14 +94,27 @@ export default function Charities({ navigation }) {
                 </View>
             </Card>
         </TouchableOpacity>
->>>>>>> Stashed changes
+        <Card>
+            <View style = {{flexDirection: 'row', flex : 1}}>
+            <View style = {{flex : 33}}>
+                <Image 
+                source = {require('../Images/tree.jpeg')}
+                style = {styles.image}
+                />
+            </View>
+            <View style = {{flex : 66}}> 
+                <Text style = {styles.title}>{item.charity}</Text>
+                <Text>{item.descr}</Text>
+            </View>
+            </View>
+        </Card>
         );
     };
 
     return (
         <SafeAreaView style = {styles.view1}>
         <SearchBar  
-            placeholder = "What new organization would you like to donate to?"
+            placeholder = "Search for an organization"
             onChangeText={updateSearch}
             value={search}
             containerStyle = {{backgroundColor : "#56CCF2"}}
@@ -163,11 +150,17 @@ const styles = StyleSheet.create({
       marginHorizontal: 5,
     },
     title: {
-      fontSize: 15,
+      fontSize: 20,
     },
     image: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
       },
+    image: {
+        height: 100,
+        width : 100,
+        marginRight: 20,
+        resizeMode:"cover",
+    }
   });
