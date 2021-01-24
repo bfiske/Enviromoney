@@ -76,6 +76,24 @@ export default function Charities({ navigation }) {
     const renderItem = ({ item }) => {
         const backgroundColor = item.id === selectedId ? "white" : "#56ccf2";
         return (
+        <TouchableOpacity
+            onPress = {() => navigation.navigate("IndividualCharity", {charity : item})}
+            >
+            <Card>
+                <View style = {{flexDirection: 'row', flex : 1}}>
+                <View style = {{flex : 33}}>
+                    <Image 
+                    source = {require('../Images/tree.jpeg')}
+                    style = {styles.image}
+                    />
+                </View>
+                <View style = {{flex : 66}}> 
+                    <Text style = {styles.title}>{item.charity}</Text>
+                    <Text>{item.descr}</Text>
+                </View>
+                </View>
+            </Card>
+        </TouchableOpacity>
         <Card>
             <View style = {{flexDirection: 'row', flex : 1}}>
             <View style = {{flex : 33}}>
@@ -99,6 +117,8 @@ export default function Charities({ navigation }) {
             placeholder = "Search for an organization"
             onChangeText={updateSearch}
             value={search}
+            containerStyle = {{backgroundColor : "#56CCF2"}}
+            
         />
         <ScrollView>
             <FlatList

@@ -8,6 +8,17 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
+
+const screen = Dimensions.get("screen");
+import {
+  Text,
+  StyleSheet,
+  View,
+  TextInput,
+  Button,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 
 import { Picker } from "@react-native-picker/picker";
@@ -49,21 +60,6 @@ export default function SignUp({ navigation }) {
       <View style={styles.header}>
         <Text style={styles.signUpText}>Sign Up</Text>
       </View>
-
-      <Text>Login</Text>
-      <View>
-        <TextInput
-          placeholder="username"
-          onChangeText={(text) => setUsername(text)}
-        />
-        <TextInput secureTextEntry={true} placeholder="password" />
-        <Button title="Login" onPress={() => navigation.navigate("Login")} />
-        <Button
-          title="Sign Up"
-          onPress={() => navigation.navigate("CompTest")}
-        />
-      </View>
-
       {formErrors.length > 0 &&
         formErrors.map((err) => {
           <Text>{err}</Text>;
