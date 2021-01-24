@@ -11,6 +11,7 @@ import SignUp from "./Screens/SignUp";
 import Home from "./Screens/Home";
 import IndividualCharity from "./Screens/IndividualCharity";
 import CharitySearch from "./Screens/CharitySearch";
+import Analytics from "./Screens/Analytics";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 enableScreens();
@@ -22,16 +23,29 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Sign Up"
+          component={SignUp}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Home"
           component={Home}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="CompTest" component={CompTest} options={{ headerShown: false }}/>
-        <Stack.Screen name="IndividualCharity" component={IndividualCharity} options={{ headerShown: false }}/>
-        <Stack.Screen name="Organization Search" component={CharitySearch} />
+        <Stack.Screen
+          name="CompTest"
+          component={CompTest}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="IndividualCharity" component={IndividualCharity} />
+        <Stack.Screen name="Organizations" component={CharitySearch} />
+        <Stack.Screen name="Analytics" component={Analytics} />
       </Stack.Navigator>
     </NavigationContainer>
   );

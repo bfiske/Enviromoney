@@ -9,6 +9,28 @@ import {
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import { Card, ListItem, Button, Icon } from "react-native-elements";
 import NavBar from "../Components/NavBar";
+import Svg, {
+  Circle,
+  Ellipse,
+  G,
+  TSpan,
+  TextPath,
+  Path,
+  Polygon,
+  Polyline,
+  Line,
+  Rect,
+  Use,
+  Image,
+  Symbol,
+  Defs,
+  LinearGradient,
+  RadialGradient,
+  Stop,
+  ClipPath,
+  Pattern,
+  Mask,
+} from "react-native-svg";
 
 export default function Home({ navigation, route }) {
   const progress = (amt) => {
@@ -49,10 +71,15 @@ export default function Home({ navigation, route }) {
             <Card.Divider />
             <TouchableOpacity
               style={styles.changeBtn}
-              onPress={() => navigation.navigate("Organization Search")}
+              onPress={() => navigation.navigate("Organizations")}
             >
               <Text style={styles.changeBtnText}>Change Charity</Text>
             </TouchableOpacity>
+          </Card>
+          <Card>
+            <Card.Title>Your Donations</Card.Title>
+            <Text style={styles.text}>Weekly Donations: $15</Text>
+            <Text style={styles.text}>Monthly Donations: $60</Text>
           </Card>
           <Card>
             <Card.Title>World Wide Fund</Card.Title>
@@ -72,7 +99,7 @@ export default function Home({ navigation, route }) {
           </Card>
         </View>
       </ScrollView>
-      <NavBar />
+      <NavBar navigation={navigation} />
     </>
   );
 }
