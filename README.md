@@ -1,4 +1,4 @@
-# hackatbrown
+# Environmoney
 
 Built using React Native, Express and MongoDB for Hack@Brown2021.
 
