@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, Linking } from "react-native";
+import { Image } from "react-native";
 
-export default function NewImage(props) {
-  console.log(props);
-  //   return <Image style={styles.image} source={require(props.imageName)} />;
-  return <Text>New Image</Text>;
-}
+export default function NewImage({ source }) {
+    return (
+        <Image source={{uri: source}} alt="Example" className="w-25 m-2" />
+    );
+  }
