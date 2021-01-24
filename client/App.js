@@ -19,17 +19,21 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator>
-    //     <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="CompTest" component={CompTest} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="My Charity" component={MyCharity} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="IndividualCharity" component={IndividualCharity} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="CharitySearch" component={CharitySearch} options={{ headerShown: false }}/>
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-    <CharitySearch></CharitySearch>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Sign Up" component={SignUp} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen name="CompTest" component={CompTest} />
+        <Stack.Screen name="Charities" component={Charities} />
+        <Stack.Screen name="IndividualCharity" component={IndividualCharity} />
+        <Stack.Screen name="CharitySearch" component={CharitySearch} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-  }
+}
