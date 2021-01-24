@@ -57,18 +57,22 @@ export default function GraphStats({ navigation }) {
             <Text style={styles.headerBtnText}>Weekly</Text>
           </TouchableOpacity>
         </View>
-        <LineChart
-          style={{
-            margin: 20,
-            borderRadius: 10,
-          }}
-          data={data}
-          width={screenWidth}
-          height={220}
-          chartConfig={chartConfig}
-        />
-        <Text>Total Collected</Text>
-        <FlatList data={dummyData} renderItem={renderItem} />
+        <View>
+          <LineChart
+            style={{
+              margin: 20,
+              borderRadius: 10,
+            }}
+            data={data}
+            width={screenWidth}
+            height={220}
+            chartConfig={chartConfig}
+          />
+          <View style={styles.mainHdr}>
+            <Text style={styles.mainHdrTxt}>Total Collected</Text>
+          </View>
+          <FlatList data={dummyData} renderItem={renderItem} />
+        </View>
       </ScrollView>
       <NavBar navigation={navigation} />
     </>
@@ -86,11 +90,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 10,
     paddingVertical: 10,
-    borderRadius: 50,
-    marginTop: 2,
+    borderRadius: 10,
+    marginTop: 10,
     marginHorizontal: 10,
   },
   headerBtnText: {
     color: "white",
+  },
+  mainHdr: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  mainHdrTxt: {
+    fontSize: 20,
   },
 });
