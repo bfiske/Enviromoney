@@ -101,7 +101,7 @@ export default function Home({ navigation, route }) {
               style={styles.changeBtn}
               onPress={() => navigation.navigate("CharitySearch")}
             >
-              <Text style={styles.changeBtnText}>Change Charity</Text>
+              <Text style={styles.changeBtnText}>Change Organization</Text>
             </TouchableOpacity>
           </Card>
           <Card>
