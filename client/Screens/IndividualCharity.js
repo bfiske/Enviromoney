@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   bigText: {
     fontSize: 25,
-    padding: 20
+    padding: 10
   },
   littleText: {
     marginRight: 20,
