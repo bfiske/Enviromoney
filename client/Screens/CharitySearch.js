@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import {
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  Button,
-  ScrollView,
   FlatList,
-  StatusBar,
   Image,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
   TouchableOpacity,
-  SafeAreaView,
-  ImageStore,
+  View,
 } from "react-native";
-import { SearchBar, Card, ListItem, Icon } from "react-native-elements";
+import { Card, SearchBar } from "react-native-elements";
+import NavBar from "../Components/NavBar";
 
 /* Prefix
     ALL
@@ -123,19 +120,22 @@ export default function Charities({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.view1}>
-      <SearchBar
-        placeholder="Search for an organization"
-        onChangeText={updateSearch}
-        value={search}
-        containerStyle={{ backgroundColor: "#56CCF2" }}
-      />
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </SafeAreaView>
+    <>
+      <ScrollView style={styles.view1}>
+        <SearchBar
+          placeholder="Search for an organization"
+          onChangeText={updateSearch}
+          value={search}
+          containerStyle={{ backgroundColor: "#56CCF2" }}
+        />
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      </ScrollView>
+      <NavBar navigation={navigation} />
+    </>
   );
 }
 

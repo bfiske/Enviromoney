@@ -1,9 +1,9 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import { Text, Dimensions, ScrollView, View } from "react-native";
+import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native";
 import { LineChart } from "react-native-chart-kit";
 import { Card } from "react-native-elements";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
+import NavBar from "../Components/NavBar";
 
 const chartConfig = {
   backgroundGradientFrom: "white",
@@ -38,7 +38,7 @@ const dummyData = [
   { day: "Saturday 1/31/2019", amount: "0.5" },
 ];
 
-export default function GraphStats() {
+export default function GraphStats({ navigation }) {
   const renderItem = ({ item }) => (
     <Card>
       <Text>
@@ -47,28 +47,31 @@ export default function GraphStats() {
     </Card>
   );
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
-      <View style={styles.headerBtns}>
-        <TouchableOpacity style={styles.headerBtn}>
-          <Text style={styles.headerBtnText}>Daily</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.headerBtn}>
-          <Text style={styles.headerBtnText}>Weekly</Text>
-        </TouchableOpacity>
-      </View>
-      <LineChart
-        style={{
-          margin: 20,
-          borderRadius: 10,
-        }}
-        data={data}
-        width={screenWidth}
-        height={220}
-        chartConfig={chartConfig}
-      />
-      <Text>Total Collected</Text>
-      <FlatList data={dummyData} renderItem={renderItem} />
-    </ScrollView>
+    <>
+      <ScrollView style={{ backgroundColor: "white" }}>
+        <View style={styles.headerBtns}>
+          <TouchableOpacity style={styles.headerBtn}>
+            <Text style={styles.headerBtnText}>Daily</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.headerBtn}>
+            <Text style={styles.headerBtnText}>Weekly</Text>
+          </TouchableOpacity>
+        </View>
+        <LineChart
+          style={{
+            margin: 20,
+            borderRadius: 10,
+          }}
+          data={data}
+          width={screenWidth}
+          height={220}
+          chartConfig={chartConfig}
+        />
+        <Text>Total Collected</Text>
+        <FlatList data={dummyData} renderItem={renderItem} />
+      </ScrollView>
+      <NavBar navigation={navigation} />
+    </>
   );
 }
 

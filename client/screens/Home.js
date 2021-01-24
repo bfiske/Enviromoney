@@ -1,36 +1,14 @@
 import React from "react";
 import {
-  View,
   ScrollView,
-  Text,
   StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import { Card, ListItem, Button, Icon } from "react-native-elements";
+import { Card } from "react-native-elements";
 import NavBar from "../Components/NavBar";
-import Svg, {
-  Circle,
-  Ellipse,
-  G,
-  TSpan,
-  TextPath,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Rect,
-  Use,
-  Image,
-  Symbol,
-  Defs,
-  LinearGradient,
-  RadialGradient,
-  Stop,
-  ClipPath,
-  Pattern,
-  Mask,
-} from "react-native-svg";
 
 export default function Home({ navigation, route }) {
   const progress = (amt) => {
@@ -43,7 +21,10 @@ export default function Home({ navigation, route }) {
 
   return (
     <>
-      <ScrollView style={{ backgroundColor: "white" }}>
+      <ScrollView
+        style={{ backgroundColor: "white", flex: 1 }}
+        scrollToOverflowEnabled={true}
+      >
         <View style={styles.body}>
           <View style={styles.container}>
             <Text style={styles.welcome}>Welcome, {route.params.username}</Text>
@@ -79,7 +60,7 @@ export default function Home({ navigation, route }) {
           <Card>
             <Card.Title>Your Donations</Card.Title>
             <Text style={styles.text}>Weekly Donations: $15</Text>
-            <Text style={styles.text}>Monthly Donations: $60</Text>
+            <Text style={styles.text}>Monthly Donations: $55</Text>
           </Card>
           <Card>
             <Card.Title>World Wide Fund</Card.Title>

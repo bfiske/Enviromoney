@@ -1,18 +1,15 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import CompTest from "./Components/CompTest";
-import Login from "./Screens/Login";
-import { Platform, StyleSheet, View } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { enableScreens } from "react-native-screens";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ActionSheetProvider } from "@expo/react-native-action-sheet";
-import SignUp from "./Screens/SignUp";
+import React from "react";
+import { enableScreens } from "react-native-screens";
+import CompTest from "./Components/CompTest";
+import Analytics from "./Screens/Analytics";
+import CharitySearch from "./Screens/CharitySearch";
 import Home from "./Screens/Home";
 import IndividualCharity from "./Screens/IndividualCharity";
-import CharitySearch from "./Screens/CharitySearch";
-import Analytics from "./Screens/Analytics";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Login from "./Screens/Login";
+import SignUp from "./Screens/SignUp";
 
 enableScreens();
 

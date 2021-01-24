@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import {
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  Button,
-  TouchableOpacity,
   Dimensions,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
-
-import RNPickerSelect from "react-native-picker-select";
 
 //import { Picker } from "@react-native-picker/picker";
 const screen = Dimensions.get("screen");
@@ -109,7 +106,7 @@ export default function SignUp({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
     height: 50,
@@ -122,7 +119,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     borderRadius: 10,
-    alignSelf: 'center'
+    alignSelf: "center",
   },
   header: {
     flexDirection: "row",
@@ -150,7 +147,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   form: {
-    alignSelf: 'center',
+    alignSelf: "center",
     justifyContent: "center",
     width: screen.width,
   },
