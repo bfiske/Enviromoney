@@ -96,7 +96,7 @@ export default function Charities({ navigation }) {
     return (
         <SafeAreaView style = {styles.view1}>
         <SearchBar  
-            placeholder = "Search for an organizations"
+            placeholder = "Search for an organization"
             onChangeText={updateSearch}
             value={search}
         />
