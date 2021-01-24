@@ -7,12 +7,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { enableScreens } from "react-native-screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
-
 import SignUp from "./Screens/SignUp";
 import Home from "./Screens/Home";
-import IndividualCharity from "./Screens/IndividualCharity";
-import Charities from "./Screens/Charities";
-import CharitySearch from "./Screens/CharitySearch";
+import IndividualCharity from "./Screens/IndividualCharity"
+import MyCharity from "./Screens/MyCharity";
+import CharitySearch from "./Screens/CharitySearch"
 
 enableScreens();
 

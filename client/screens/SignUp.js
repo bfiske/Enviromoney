@@ -47,7 +47,6 @@ export default function SignUp({ navigation }) {
       <View style={styles.header}>
         <Text style={styles.signUpText}>Sign Up</Text>
       </View>
-
       {formErrors.length > 0 &&
         formErrors.map((err) => {
           <Text>{err}</Text>;
@@ -73,7 +72,7 @@ export default function SignUp({ navigation }) {
           />
           <TextInput
             style={styles.textInput}
-            placeholder="phoneNumber"
+            placeholder="Phone Number"
             onChangeText={(text) => setPhoneNumber(text)}
           />
           <TouchableOpacity
@@ -88,7 +87,7 @@ export default function SignUp({ navigation }) {
         <View>
           <TextInput
             style={styles.textInput}
-            placeholder="bankAccoutNo"
+            placeholder="Bank Account Number"
             onChangeText={(text) => setBankAccountNo(text)}
           />
 

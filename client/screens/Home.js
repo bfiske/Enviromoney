@@ -8,30 +8,7 @@ import {
 } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import { Card, ListItem, Button, Icon } from "react-native-elements";
-
-import Svg, {
-  Circle,
-  Ellipse,
-  G,
-  Text,
-  TSpan,
-  TextPath,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Rect,
-  Use,
-  Image,
-  Symbol,
-  Defs,
-  LinearGradient,
-  RadialGradient,
-  Stop,
-  ClipPath,
-  Pattern,
-  Mask,
-} from "react-native-svg";
+import { View, Text, Button, SafeAreaView} from "react-native";
 
 export default function Home({ navigation, route }) {
   const progress = (amt) => {
