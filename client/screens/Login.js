@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import {
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  Button,
-  Dimensions,
-} from "react-native";
+import React, { useContext, useState } from "react";
+import { Dimensions, StyleSheet, Text, TextInput, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { UserContext } from "../Contexts/UserContext";
 
 const screen = Dimensions.get("screen");
 export default function Login({ navigation }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+
+  const userCtx = useContext(UserContext);
+
+  const handleSubmit = () => {
+    userCtx.setUser(username);
+    navigation.navigate("Home");
+  };
   console.log(screen);
   return (
     <View style={styles.container}>
@@ -25,18 +26,18 @@ export default function Login({ navigation }) {
         <TextInput
           autoCorrect={false}
           style={styles.textInput}
-          placeholder="username"
+          placeholder="Username"
           onChangeText={(text) => setUsername(text)}
         />
         <TextInput
           style={styles.textInput}
           secureTextEntry={true}
-          placeholder="password"
+          placeholder="Password"
           onChangeText={(text) => setPassword(text)}
         />
         <TouchableOpacity
           style={styles.loginBtn}
-          onPress={() => navigation.navigate("Home", { username: username })}
+          onPress={() => handleSubmit()}
         >
           <Text style={styles.loginBtnText}>Log in</Text>
         </TouchableOpacity>

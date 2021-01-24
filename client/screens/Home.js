@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
-  View,
   ScrollView,
-  Text,
   StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import { Card, ListItem, Button, Icon } from "react-native-elements";
+import { Card } from "react-native-elements";
 import NavBar from "../Components/NavBar";
+import { UserContext } from "../Contexts/UserContext";
 
 export default function Home({ navigation, route }) {
   const progress = (amt) => {
@@ -17,64 +18,17 @@ export default function Home({ navigation, route }) {
     }
   };
 
-  console.log(route);
+  const userCtx = useContext(UserContext);
 
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
-      <View style={styles.body}>
-        <View style={styles.container}>
-          <Text style={styles.welcome}>Welcome, {route.params.username}</Text>
-        </View>
-        <View style={styles.container}>
-          <AnimatedCircularProgress
-            size={200}
-            width={15}
-            fill={progress(3)}
-            tintColor="#00e0ff"
-            backgroundColor="#E8E8E8"
-          >
-            {(fill) => (
-              <View style={styles.circleView}>
-                <Text style={styles.text}>Today (0)</Text>
-
-                <Text style={styles.userProgress}>$3</Text>
-                <Text style={styles.total}>out of $5</Text>
-              </View>
-            )}
-          </AnimatedCircularProgress>
-        </View>
-        <Card>
-          <Card.Title>Plant for the Earth</Card.Title>
-          <Card.Divider />
-          <TouchableOpacity
-            style={styles.changeBtn}
-            onPress={() => navigation.navigate("Organization Search")}
-          >
-            <Text style={styles.changeBtnText}>Change Organization</Text>
-          </TouchableOpacity>
-        </Card>
-        <Card>
-          <Card.Title>World Wide Fund</Card.Title>
-          <Card.Divider />
-
-          <Text style={styles.text}>
-            World Wide Fund used your $10 donation to rescue California Condors
-          </Text>
-        </Card>
-        <Card>
-          <Card.Title>Plant for the Earth</Card.Title>
-          <Card.Divider />
-          <Text style={styles.text}>
-            Plant for the Earth planted 3 trees using your $5 donation
-          </Text>
-        </Card>
-      </View>
-    </ScrollView>
     <>
-      <ScrollView style={{ backgroundColor: "white" }}>
+      <ScrollView
+        style={{ backgroundColor: "white", flex: 1 }}
+        scrollToOverflowEnabled={true}
+      >
         <View style={styles.body}>
           <View style={styles.container}>
-            <Text style={styles.welcome}>Welcome, {route.params.username}</Text>
+            <Text style={styles.welcome}>Welcome, {userCtx.user}</Text>
           </View>
           <View style={styles.container}>
             <AnimatedCircularProgress
@@ -96,10 +50,11 @@ export default function Home({ navigation, route }) {
           </View>
           <Card>
             <Card.Title>Plant for the Earth</Card.Title>
-            <Card.Divider />
+            <Text style={styles.text}>Weekly Donations: $15</Text>
+            <Text style={styles.text}>Monthly Donations: $55</Text>
             <TouchableOpacity
               style={styles.changeBtn}
-              onPress={() => navigation.navigate("CharitySearch")}
+              onPress={() => navigation.navigate("Organizations")}
             >
               <Text style={styles.changeBtnText}>Change Organization</Text>
             </TouchableOpacity>
@@ -122,7 +77,7 @@ export default function Home({ navigation, route }) {
           </Card>
         </View>
       </ScrollView>
-      <NavBar />
+      <NavBar navigation={navigation} />
     </>
   );
 }
@@ -146,7 +101,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 40,
-    marginVertical: 50,
+    marginVertical: 40,
   },
   text: {
     marginVertical: 10,

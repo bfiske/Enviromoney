@@ -49,30 +49,29 @@ const dummyData = [{
 ]
 
 export default function Charities({ navigation }) {
-    const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("");
 
-    updateSearch = (search) => {
-        setSearch({ search });
-        updateData(search)
-    };
+  updateSearch = (search) => {
+    setSearch({ search });
+    updateData(search);
+  };
 
-    const [selectedId, setSelectedId] = useState(null);
-    const [input, setInput] = useState(null)
-    const [data, setData] = useState(dummyData)
+  const [selectedId, setSelectedId] = useState(null);
+  const [input, setInput] = useState(null);
+  const [data, setData] = useState(dummyData);
 
+  const updateData = (input) => {
+    const newData = dummyData.filter((charity) => {
+      return charity.charity.toLowerCase().includes(input.toLowerCase());
+    });
+    setData(newData);
+  };
 
-    const updateData = (input) => {
-        const newData = dummyData.filter(charity => {
-            return charity.charity.toLowerCase().includes(input.toLowerCase())
-        })
-        setData(newData)
-    }
-
-    const Item = ({ item, onPress, style }) => (
-        <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
-        <Text style={styles.title}>{item.charity}</Text>
-        </TouchableOpacity>
-    );
+  const Item = ({ item, onPress, style }) => (
+    <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
+      <Text style={styles.title}>{item.charity}</Text>
+    </TouchableOpacity>
+  );
 
     const renderItem = ({ item }) => {
         const backgroundColor = item.id === selectedId ? "white" : "#56ccf2";
@@ -96,42 +95,25 @@ export default function Charities({ navigation }) {
                 </View>
             </Card>
         </TouchableOpacity>
-        <Card>
-            <View style = {{flexDirection: 'row', flex : 1}}>
-            <View style = {{flex : 33}}>
-                <Image 
-                source = {require('../Images/tree.jpeg')}
-                style = {styles.image}
-                />
-            </View>
-            <View style = {{flex : 66}}> 
-                <Text style = {styles.title}>{item.charity}</Text>
-                <Text>{item.descr}</Text>
-            </View>
-            </View>
-        </Card>
-        );
-    };
 
-    return (
-        <SafeAreaView style = {styles.view1}>
-        <SearchBar  
-            placeholder = "Search for an organization"
-            onChangeText={updateSearch}
-            value={search}
-            containerStyle = {{backgroundColor : "#56CCF2"}}
-            
+  return (
+    <>
+      <ScrollView style={styles.view1}>
+        <SearchBar
+          placeholder="Search for an organization"
+          onChangeText={updateSearch}
+          value={search}
+          containerStyle={{ backgroundColor: "#56CCF2" }}
         />
-        <ScrollView>
-            <FlatList
-                data={data}
-                renderItem = {renderItem}
-                keyExtractor={(item) => item.id}
-            />
-        </ScrollView>
-        </SafeAreaView>
-        
-    )
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      </ScrollView>
+      <NavBar navigation={navigation} />
+    </>
+  );
 }
 
 const styles = StyleSheet.create({

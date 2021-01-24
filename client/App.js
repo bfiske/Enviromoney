@@ -1,20 +1,18 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import CompTest from "./Components/CompTest";
-import Login from "./Screens/Login";
-import { Platform, StyleSheet, View } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { enableScreens } from "react-native-screens";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ActionSheetProvider } from "@expo/react-native-action-sheet";
-import SignUp from "./Screens/SignUp";
+import React from "react";
+import { enableScreens } from "react-native-screens";
+import CompTest from "./Components/CompTest";
+import Analytics from "./Screens/Analytics";
+import CharitySearch from "./Screens/CharitySearch";
 import Home from "./Screens/Home";
 import IndividualCharity from "./Screens/IndividualCharity";
-import CharitySearch from "./Screens/CharitySearch";
-import IndividualCharity from "./Screens/IndividualCharity";
-import MyCharity from "./Screens/MyCharity";
-import CharitySearch from "./Screens/CharitySearch";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Login from "./Screens/Login";
+import Profile from "./Screens/Profile";
+import SignUp from "./Screens/SignUp";
+import { UserProvider } from "./Contexts/UserContext";
+import Badges from "./Screens/Badges";
 
 enableScreens();
 
@@ -23,19 +21,40 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="CompTest" component={CompTest} options={{ headerShown: false }}/>
-        <Stack.Screen name="IndividualCharity" component={IndividualCharity} options={{ headerShown: false }}/>
-        <Stack.Screen name="Organization Search" component={CharitySearch} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Sign Up"
+            component={SignUp}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CompTest"
+            component={CompTest}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="IndividualCharity"
+            component={IndividualCharity}
+          />
+          <Stack.Screen name="Organizations" component={CharitySearch} />
+
+          <Stack.Screen name="Analytics" component={Analytics} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Badges" component={Badges} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </UserProvider>
   );
 }
