@@ -9,9 +9,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import SignUp from "./Screens/SignUp";
 import Home from "./Screens/Home";
-import IndividualCharity from "./Screens/IndividualCharity"
+import IndividualCharity from "./Screens/IndividualCharity";
 import MyCharity from "./Screens/MyCharity";
-import CharitySearch from "./Screens/CharitySearch"
+import CharitySearch from "./Screens/CharitySearch";
 
 enableScreens();
 
@@ -30,7 +30,7 @@ export default function App() {
         />
 
         <Stack.Screen name="CompTest" component={CompTest} />
-        <Stack.Screen name="Charities" component={Charities} />
+        <Stack.Screen name="MyCharity" component={MyCharity} />
         <Stack.Screen name="IndividualCharity" component={IndividualCharity} />
         <Stack.Screen name="CharitySearch" component={CharitySearch} />
       </Stack.Navigator>

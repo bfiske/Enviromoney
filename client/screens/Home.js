@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import { Card, ListItem, Button, Icon } from "react-native-elements";
-import { View, Text, Button, SafeAreaView} from "react-native";
 
 export default function Home({ navigation, route }) {
   const progress = (amt) => {
@@ -46,7 +45,7 @@ export default function Home({ navigation, route }) {
           <Card.Divider />
           <TouchableOpacity
             style={styles.changeBtn}
-            onPress={() => navigation.navigate("Charities")}
+            onPress={() => navigation.navigate("CharitySearch")}
           >
             <Text style={styles.changeBtnText}>Change Charity</Text>
           </TouchableOpacity>
