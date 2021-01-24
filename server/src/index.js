@@ -7,10 +7,11 @@ import mongoose from "mongoose";
 import session from "express-session";
 import cors from "cors";
 
-let apiRouter = require("./routes/api");
+import apiRouter from "./routes/api";
 const app = express();
 
 // MongoDB
+console.log(process.env.MONGO_DB);
 mongoose.connect(process.env.MONGO_DB || "", {
   useNewUrlParser: true,
   useUnifiedTopology: true,

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View, TextInput, Button, ScrollView, FlatList, StatusBar, Image, TouchableOpacity, SafeAreaView, ImageStore} from "react-native";
 import { SearchBar, Card } from "react-native-elements"
-
 const dummyData = [{
     'id' : '1',
     'charity' : 'Tree Place',
@@ -65,8 +64,6 @@ const dummyData = [{
     'link' : 'www.google.com'
 }
 ]
-
-
 
 export default function Charities({ navigation }) {
     const [search, setSearch] = useState('')
