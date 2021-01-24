@@ -48,15 +48,6 @@ export default function App() {
           <Stack.Screen
             name="Organization"
             component={IndividualCharity}
-            options={{
-              headerRight: () => (
-                  <Button
-                  onPress={() => alert('Clicked !!')}
-                  title="menu"
-                  color="#000"
-                  />
-              ),
-              }}
           />
           <Stack.Screen name="Organizations" component={CharitySearch}  options={{ headerShown: false }}/>
 

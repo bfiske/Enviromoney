@@ -84,7 +84,7 @@ export default function Charities({ props, navigation }) {
         const backgroundColor = item.id === selectedId ? "white" : "#56ccf2";
         return (
         <TouchableOpacity
-            onPress = {() => navigation.navigate("Organization", {charity : item, changemode :  props.route.params.changemode})}
+            onPress = {() => navigation.navigate("Organization", {charity : item})}
             >
             <Card>
                 <View style = {{flexDirection: 'row', flex : 1}}>
