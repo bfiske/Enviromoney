@@ -49,18 +49,14 @@ export default function Home({ navigation, route }) {
           </View>
           <Card>
             <Card.Title>Plant for the Earth</Card.Title>
-            <Card.Divider />
+            <Text style={styles.text}>Weekly Donations: $15</Text>
+            <Text style={styles.text}>Monthly Donations: $55</Text>
             <TouchableOpacity
               style={styles.changeBtn}
               onPress={() => navigation.navigate("Organizations")}
             >
               <Text style={styles.changeBtnText}>Change Charity</Text>
             </TouchableOpacity>
-          </Card>
-          <Card>
-            <Card.Title>Your Donations</Card.Title>
-            <Text style={styles.text}>Weekly Donations: $15</Text>
-            <Text style={styles.text}>Monthly Donations: $55</Text>
           </Card>
           <Card>
             <Card.Title>World Wide Fund</Card.Title>
@@ -104,7 +100,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 40,
-    marginVertical: 50,
+    marginVertical: 40,
   },
   text: {
     marginVertical: 10,

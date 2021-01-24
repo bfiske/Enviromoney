@@ -9,6 +9,7 @@ import CharitySearch from "./Screens/CharitySearch";
 import Home from "./Screens/Home";
 import IndividualCharity from "./Screens/IndividualCharity";
 import Login from "./Screens/Login";
+import Profile from "./Screens/Profile";
 import SignUp from "./Screens/SignUp";
 
 enableScreens();
@@ -43,6 +44,7 @@ export default function App() {
         <Stack.Screen name="IndividualCharity" component={IndividualCharity} />
         <Stack.Screen name="Organizations" component={CharitySearch} />
         <Stack.Screen name="Analytics" component={Analytics} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

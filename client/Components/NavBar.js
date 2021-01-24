@@ -97,7 +97,11 @@ export default function NavBar({ navigation }) {
         </TouchableOpacity>
       </View>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Profile");
+          }}
+        >
           <Svg
             width={30}
             height={33}
